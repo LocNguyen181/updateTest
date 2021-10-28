@@ -1,0 +1,35 @@
+<div>
+  <mat-card *ngFor="let device of listDevice">
+    <mat-card-title>Device ID: {{ device.deviceId }}</mat-card-title>
+    <mat-card-title>Region: {{ device.region }}</mat-card-title>
+    <br>
+    <button mat-raised-button color="warn" (click)="delete(device.id)">Delete</button>
+    <button class="btnedit" mat-raised-button color="warn"><a class="directpage" href= 'home/device'>Edit</a></button>
+    <router-outlet></router-outlet>
+    <mat-card-actions>
+      <mat-card class="result">
+        <mat-card-content>
+          <h2 class="example-h2"> Device States</h2>
+          <section class="example-section">
+            <div *ngIf="device.state === 'On'; else deviceOff">
+                <mat-slide-toggle class="example-margin" [color]="color" [checked] = "checked" (click)="setDeviceStatus(device.registered)">
+                      Device is {{ device.state }}
+                </mat-slide-toggle>
+            </div>
+            <ng-template #deviceOff>
+                 <mat-slide-toggle class="example-margin" [color]="color" [checked] = "!checked">
+                      Device is {{ device.state }}
+                </mat-slide-toggle>
+            </ng-template>
+          </section>
+        </mat-card-content>
+        <h2 class="slider-h2">Device Level</h2>
+        <div>
+            <mat-slider step="1" min="0" max="3" showTicks = "true"  [(ngModel)]="device.action" >
+            </mat-slider>
+              <p> Device Level is {{device.action}} </p>
+        </div>
+    </mat-card>
+    </mat-card-actions>
+  </mat-card>
+</div>

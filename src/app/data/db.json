@@ -1,0 +1,54 @@
+{
+  "register-device": [
+    {
+      "deviceId": "2",
+      "region": "3",
+      "state": "Off",
+      "action": "3",
+      "registered": true,
+      "id": 2
+    },
+    {
+      "deviceId": "3",
+      "region": "5",
+      "state": "On",
+      "action": "1",
+      "registered": true,
+      "id": 3
+    },
+    {
+      "deviceId": "6",
+      "region": "10",
+      "state": "On",
+      "action": 2,
+      "registered": true,
+      "id": 4
+    }
+  ],
+  "device": [
+    {
+      "id": 1,
+      "state": "On",
+      "level": "3",
+      "operation-status": false
+    },
+    {
+      "id": 2,
+      "state": "On",
+      "level": "3",
+      "operation-status": false
+    },
+    {
+      "id": 3,
+      "state": "On",
+      "level": "3",
+      "operation-status": true
+    },
+    {
+      "id": 4,
+      "state": "On",
+      "level": "3",
+      "operation-status": true
+    }
+  ]
+}
